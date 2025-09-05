@@ -3,7 +3,7 @@
     "id": "snake",
     "title": "Snake",
     "path": "games/snake/"
-  
+  },
   {
     "id": "pacman",
     "title": "Pac-Man",
