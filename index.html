@@ -1,1 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PlayHub — Browser Games (School‑Friendly)</title>
+  <meta name="description" content="A simple, school‑friendly portal for your own HTML5 games or open‑source titles." />
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#121826; --muted:#8aa0b6; --text:#e6eef6; --accent:#5ac8fa; --accent2:#7ef7b8; --danger:#ff6b6b;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1e2a40,transparent),var(--bg); color:var(--text); font:16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
+    header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(10px); background:linear-gradient(180deg, rgba(11,15,23,.9), rgba(11,15,23,.6) 60%, rgba(11,15,23,0)); border-bottom:1px solid rgba(255,255,255,.06)}
+    .wrap{max-width:1100px; margin:0 auto; padding:16px}
+    h1{margin:6px 0 2px; font-size:26px}
+    .sub{color:var(--muted); font-size:14px}
+    .toprow{display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:end; margin-top:10px}
+    .search{display:flex; gap:8px; align-items:center; background:var(--card); padding:10px 12px; border:1px solid rgba(255,255,255,.06); border-radius:12px; box-shadow:var(--shadow)}
+    .search input{flex:1; background:transparent; border:0; outline:none; color:var(--text); font-size:15px}
+    .pillbar{display:flex; gap:8px; flex-wrap:wrap}
+    .pill{padding:8px 12px; border:1px solid rgba(255,255,255,.08); color:var(--muted); border-radius:999px; cursor:pointer; background:#0f1522}
+    .pill.active{background:linear-gradient(135deg, rgba(90,200,250,.18), rgba(126,247,184,.18)); color:var(--text); border-color:rgba(255,255,255,.18)}
 
+    main{max-width:1100px; margin:18px auto; padding:0 16px 80px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px}
+    .card{background:linear-gradient(180deg, #131a2c, #0f1422); border:1px solid rgba(255,255,255,.07); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column}
+    .thumb{aspect-ratio:16/9; background:#0e1320; position:relative}
+    .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.1)}
+    .body{padding:12px 12px 14px}
+    .title{font-weight:700; margin-bottom:6px}
+    .meta{display:flex; gap:8px; align-items:center; color:var(--muted); font-size:12px}
+    .tags{display:flex; gap:6px; flex-wrap:wrap; margin:8px 0}
+    .tag{font-size:11px; padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.08); color:var(--muted)}
+    .row{display:flex; align-items:center; gap:8px; margin-top:10px}
+    .btn{flex:1; text-align:center; background:linear-gradient(135deg, rgba(90,200,250,.25), rgba(126,247,184,.25)); border:1px solid rgba(255,255,255,.15); padding:10px 12px; border-radius:12px; color:var(--text); font-weight:600; cursor:pointer}
+    .ghost{background:transparent}
+    .fav.active{outline:2px solid var(--accent);}
+
+    footer{position:fixed; bottom:0; left:0; right:0; background:linear-gradient(180deg, rgba(11,15,23,0), rgba(11,15,23,.9));}
+    .ft{max-width:1100px; margin:0 auto; padding:14px 16px; display:flex; gap:10px; align-items:center; justify-content:space-between}
+    .ft small{color:var(--muted)}
+
+    dialog{width:min(920px, 96vw); border:1px solid rgba(255,255,255,.12); border-radius:16px; background:linear-gradient(180deg, #0d1424, #0a0f1b); color:var(--text)}
+    dialog::backdrop{background:rgba(0,0,0,.7)}
+    .modalHead{display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.06)}
+    .modalBody{padding:12px}
+    iframe{width:100%; height:70vh; border:0; background:#0b0f17}
+    .close{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:10px; cursor:pointer}
+
+    .empty{opacity:.7; text-align:center; border:1px dashed rgba(255,255,255,.1); border-radius:16px; padding:30px}
+    a.help{color:var(--accent)} a.help:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>PlayHub <span style="font-size:14px; font-weight:400; color:var(--muted)">— your own HTML5 games</span></h1>
+    <div class="sub">Add your games to the <code>/games</code> folder and list them below. Favourites sync via <code>localStorage</code>.</div>
+    <div class="toprow">
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <input id="q" placeholder="Search games, tags…" autocomplete="off" />
+      </div>
+      <div class="pillbar" id="filters"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="grid" id="grid"></div>
+  <div id="empty" class="empty" style="display:none; margin-top:16px">
+    <p>No games match that. Try clearing filters or add more games. See <a class="help" href="#howto">how to add games</a>.</p>
+  </div>
+
+  <section id="howto" style="margin-top:28px">
+    <h2>How to add games</h2>
+    <ol>
+      <li>Create a folder <code>/games/your-game/</code> and put an <code>index.html</code> inside.</li>
+      <li>Drop a 16:9 thumbnail at <code>/games/your-game/cover.jpg</code> (optional).</li>
+      <li>In the script below, push a new object to <code>GAMES</code> with the title, path, and tags.</li>
+      <li>Only add games you created or that are open‑source and allowed to redistribute.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="ft">
+    <small>School‑friendly tip: share your own or open‑source games. Don’t try to bypass filters.</small>
+    <div>
+      <button id="btnShowFavs" class="btn ghost" style="padding:8px 10px">Show Favourites</button>
+      <button id="btnClearFavs" class="btn ghost" style="padding:8px 10px">Clear Favourites</button>
+    </div>
+  </div>
+</footer>
+
+<dialog id="player">
+  <div class="modalHead">
+    <div style="display:flex; gap:8px; align-items:center">
+      <div id="playingTitle" style="font-weight:700">Playing…</div>
+      <div id="playingMeta" class="meta"></div>
+    </div>
+    <button class="close" id="close">Close</button>
+  </div>
+  <div class="modalBody">
+    <iframe id="frame" loading="lazy" allow="gamepad *; fullscreen *;"></iframe>
+  </div>
+</dialog>
+
+<script>
+// 1) List your games here. Only include content you have rights to host.
+// path should point to a folder with index.html, e.g. /games/snake/
+const GAMES = [
+  { id:'snake', title:'Classic Snake', path:'/games/snake/', tags:['arcade','retro'], plays:0 },
+  { id:'runner', title:'Infinite Runner', path:'/games/runner/', tags:['platformer','endless'], plays:0 },
+  { id:'puzzle15', title:'15‑Puzzle', path:'/games/15puzzle/', tags:['puzzle'], plays:0 },
+];
+
+// 2) UI helpers
+const $ = sel => document.querySelector(sel);
+const grid = $('#grid');
+const empty = $('#empty');
+const filters = $('#filters');
+const q = $('#q');
+const favKey = 'playhub:favs:v1';
+const favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
+let activeTag = null;
+let showFavs = false;
+
+function tagPills(){
+  const tagCounts = {};
+  for(const g of GAMES){
+    for(const t of g.tags){ tagCounts[t] = (tagCounts[t]||0)+1; }
+  }
+  filters.innerHTML = '';
+  const make = (label, tag=null) => {
+    const b = document.createElement('button');
+    b.className = 'pill' + ((activeTag===tag)?' active':'');
+    b.textContent = label;
+    b.onclick = () => { activeTag = tag; render(); };
+    return b;
+  };
+  filters.appendChild(make('All'));
+  Object.entries(tagCounts).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([t,c])=>{
+    filters.appendChild(make(`${t} • ${c}`, t));
+  });
+}
+
+function card(g){
+  const el = document.createElement('div');
+  el.className = 'card';
+  const cover = `${g.path}cover.jpg`;
+  el.innerHTML = `
+    <div class="thumb">
+      <img alt="${g.title}" src="${cover}" onerror="this.src='data:image/svg+xml;utf8,${encodeURIComponent(placeholder(g.title))}'"/>
+    </div>
+    <div class="body">
+      <div class="title">${g.title}</div>
+      <div class="meta">${g.tags.map(t=>`#${t}`).join(' ')} · <span>${g.plays||0} plays</span></div>
+      <div class="tags">${g.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
+      <div class="row">
+        <button class="btn play">Play</button>
+        <button class="btn ghost fav ${favs.has(g.id)?'active':''}">★</button>
+      </div>
+    </div>`;
+  el.querySelector('.play').onclick = ()=> openGame(g);
+  el.querySelector('.fav').onclick = ()=> toggleFav(g.id, el.querySelector('.fav'));
+  return el;
+}
+
+function openGame(g){
+  const dlg = document.getElementById('player');
+  const frame = document.getElementById('frame');
+  document.getElementById('playingTitle').textContent = g.title;
+  document.getElementById('playingMeta').textContent = g.tags.map(t=>`#${t}`).join(' ');
+  frame.src = g.path; // loads index.html
+  dlg.showModal();
+  g.plays = (g.plays||0)+1;
+  render();
+}
+
+function closeModal(){
+  const dlg = document.getElementById('player');
+  const frame = document.getElementById('frame');
+  frame.src = 'about:blank';
+  dlg.close();
+}
+
+function toggleFav(id, btn){
+  if(favs.has(id)) favs.delete(id); else favs.add(id);
+  localStorage.setItem(favKey, JSON.stringify([...favs]));
+  btn.classList.toggle('active');
+  if(showFavs) render();
+}
+
+function placeholder(title){
+  const bg = encodeURIComponent('#0e1320');
+  const fg = encodeURIComponent('#8aa0b6');
+  return `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
+    <rect width='100%' height='100%' fill='${bg}'/>
+    <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='${fg}' font-family='Inter, system-ui' font-size='32'>${title}</text>
+  </svg>`;
+}
+
+function render(){
+  const query = (q.value || '').trim().toLowerCase();
+  let rows = GAMES.slice();
+  if(activeTag) rows = rows.filter(g => g.tags.includes(activeTag));
+  if(query){ rows = rows.filter(g => g.title.toLowerCase().includes(query) || g.tags.some(t=>t.includes(query))); }
+  if(showFavs){ rows = rows.filter(g => favs.has(g.id)); }
+
+  grid.innerHTML = '';
+  rows.forEach(g => grid.appendChild(card(g)));
+  empty.style.display = rows.length ? 'none' : 'block';
+}
+
+document.getElementById('close').onclick = closeModal;
+q.addEventListener('input', render);
+
+document.getElementById('btnShowFavs').onclick = () => { showFavs = !showFavs; render(); };
+
+document.getElementById('btnClearFavs').onclick = () => { favs.clear(); localStorage.setItem(favKey, '[]'); render(); };
+
+tagPills();
+render();
+</script>
+</body>
+</html>
