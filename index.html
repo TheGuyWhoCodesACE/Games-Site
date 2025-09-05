@@ -212,3 +212,15 @@ searchInput.addEventListener('input', e => {
 
 </body>
 </html>
+const fullscreenBtn = document.getElementById('fullscreen');
+
+fullscreenBtn.onclick = () => {
+  if (frame.requestFullscreen) {
+    frame.requestFullscreen();
+  } else if (frame.webkitRequestFullscreen) { // Safari
+    frame.webkitRequestFullscreen();
+  } else if (frame.msRequestFullscreen) { // IE11
+    frame.msRequestFullscreen();
+  }
+};
+
