@@ -37,11 +37,6 @@
 </dialog>
 
 <script>
-const GAMES = [
-  { id:'snake', title:'Classic Snake', path:'games/snake/', tags:['arcade'] },
-  { id:'puzzle15', title:'15 Puzzle', path:'games/puzzle15/', tags:['puzzle'] }
-];
-
 const grid = document.getElementById('grid');
 const player = document.getElementById('player');
 const frame = document.getElementById('frame');
@@ -73,7 +68,14 @@ closeBtn.onclick = () => {
   player.close();
 };
 
-GAMES.forEach(g => grid.appendChild(card(g)));
+// Load games.json
+fetch("games.json")
+  .then(res => res.json())
+  .then(games => games.forEach(g => grid.appendChild(card(g))))
+  .catch(err => {
+    grid.innerHTML = "<p>⚠️ Failed to load games.json</p>";
+    console.error(err);
+  });
 </script>
 
 </body>
