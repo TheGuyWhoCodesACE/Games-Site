@@ -6,7 +6,7 @@
   },
   {
     "id": "pacman",
-    "title": "Pac-Man"
+    "title": "Pac-Man",
     "path": "games/pac-man/"
   }
 ]
