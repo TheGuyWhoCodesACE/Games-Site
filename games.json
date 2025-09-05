@@ -1,9 +1,9 @@
 [
   {
     "id": "snake",
-    "title": "Classic Snake",
+    "title": "Snake",
     "path": "games/snake/"
-  },
+  
   {
     "id": "pacman",
     "title": "Pac-Man",
