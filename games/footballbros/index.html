@@ -1,71 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>football bros</title>
-  <style>
-    html, body { height: 100%; margin: 0; }
-    #container { height: 100vh; width: 100vw; position: relative; background: #000; }
-    iframe {
-      border: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-    /* Fallback UI if embedding is blocked */
-    #fallback {
-      display: none;
-      position: absolute;
-      inset: 0;
-      background: #fff;
-      color: #111;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    #fallback a { color: #0066cc; text-decoration: none; font-weight: 600; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Bros</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+        .fullscreen {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
-  <div id="container">
-    <iframe id="siteFrame" src="https://footballbros.io/" loading="eager" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
 
-    <div id="fallback" role="region" aria-live="polite">
-      <p style="font-size:1.1rem; margin: 0 0 0.5rem 0;">
-        This site cannot be embedded in an iframe. Open it directly:
-      </p>
-      <p style="margin:0">
-        <a href="https://footballbros.io/" target="_blank" rel="noopener noreferrer">Open Football Bros →</a>
-      </p>
-    </div>
-  </div>
+    <iframe src="https://dao-2048-chi.vercel.app"></iframe>
 
-  <script>
-    // Detect common embedding-block situations and show fallback.
-    // Note: cross-origin frames throw when accessed; we use that to detect blocking.
-    const iframe = document.getElementById('siteFrame');
-    const fallback = document.getElementById('fallback');
+    <button 
+      onclick="fullscreenGame('https://footballbros.io')" 
+      class="fullscreen"></button>
 
-    // After a short delay, attempt to inspect iframe; if access throws or content is blank, show fallback.
-    setTimeout(() => {
-      try {
-        // Accessing contentDocument for a cross-origin iframe will throw - treat as successful embed if no throw.
-        // Some browsers still block embedding silently; check readyState or body length when same-origin.
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        // If we can read doc and it's empty (unlikely for a real site), show fallback
-        if (!doc || !doc.body || doc.body.innerHTML.trim().length === 0) {
-          iframe.style.display = 'none';
-          fallback.style.display = 'flex';
+    <script>
+        function fullscreenGame(href) {
+            const iframe = document.querySelector("iframe");
+            const stl = iframe.style;
+            stl.width = '100vw';
+            stl.height = '100vh';
+            stl.position = 'fixed';
+            stl.left = stl.right = stl.top = stl.bottom = '0';
+            iframe.src = href;
         }
-      } catch (e) {
-        // Access denied => site likely blocked via X-Frame-Options or CSP
-        iframe.style.display = 'none';
-        fallback.style.display = 'flex';
-      }
-    }, 800);
-  </script>
+    </script>
+
 </body>
 </html>
