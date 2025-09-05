@@ -1,12 +1,11 @@
 [
-  {
-    "id": "snake",
-    "title": "Snake",
-    "path": "games/snake/"
-  },
-  {
-    "id": "pacman",
-    "title": "Pac-Man",
-    "path": "games/pac-man/"
-  }
+  { "id": "1v1-lol", "title": "1v1.lol", "path": "games/1v1.lol/" },
+  { "id": "2048", "title": "2048", "path": "games/2048/" },
+  { "id": "basketballbros", "title": "Basketball Bros", "path": "games/basketballbros/" },
+  { "id": "crossyroad", "title": "Crossy Road", "path": "games/crossyroad/" },
+  { "id": "flappybird", "title": "Flappy Bird", "path": "games/flappybird/" },
+  { "id": "fruit_ninja", "title": "Fruit Ninja", "path": "games/fruit_ninja/" },
+  { "id": "geometrydash", "title": "Geometry Dash", "path": "games/geometrydash/" },
+  { "id": "pac-man", "title": "Pac-Man", "path": "games/pac-man/" },
+  { "id": "snake", "title": "Snake", "path": "games/snake/" }
 ]
