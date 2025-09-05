@@ -1,5 +1,4 @@
 [
-  { "id": "1v1-lol", "title": "1v1.lol", "path": "games/1v1.lol/" },
   { "id": "2048", "title": "2048", "path": "games/2048/" },
   { "id": "basketballbros", "title": "Basketball Bros", "path": "games/basketballbros/" },
   { "id": "crossyroad", "title": "Crossy Road", "path": "games/crossyroad/" },
