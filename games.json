@@ -1,0 +1,12 @@
+[
+  {
+    "id": "snake",
+    "title": "Classic Snake",
+    "path": "games/snake/"
+  },
+  {
+    "id": "pacman",
+    "title": "Pac-Man Clone",
+    "path": "games/pacman/"
+  }
+]
