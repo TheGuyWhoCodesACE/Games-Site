@@ -1,3 +1,4 @@
+
 [
   { "id": "2048", "title": "2048", "path": "games/2048/" },
   { "id": "basketballbros", "title": "Basketball Bros", "path": "games/basketballbros/" },
@@ -12,5 +13,9 @@
   { "id": "pac-man", "title": "Pac-Man", "path": "games/pac-man/" },
   { "id": "run3", "title": "Run 3", "path": "games/run3/" },
   { "id": "snake", "title": "Snake", "path": "games/snake/" },
-  { "id": "cookieclicker", "title": "Cookie Clicker", "path": "games/cookieclicker/" }
+  { "id": "cookieclicker", "title": "Cookie Clicker", "path": "games/cookieclicker/" },
+  { "id": "bitlife", "title": "Bitlife", "path": "games/bitlife/" },
+  { "id": "amongus", "title": "Among Us", "path": "games/amongus/" },
+  { "id": "drivemad", "title": "Drive Mad", "path": "games/drivemad/" },
+  { "id": "driftboss", "title": "Drift Boss"path": "games/driftboss/" }
 ]
