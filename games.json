@@ -25,5 +25,10 @@
   { "id": "slope", "title": "Slope", "path": "games/slope/" },
   { "id": "magictiles", "title": "Magic Tiles", "path": "games/magictiles/" },
   { "id": "skyball", "title": "Sky Ball", "path": "games/skyball/" },
-  { "id": "tunnelrush", "title": "Tunnel Rush", "path": "games/tunnelrush/" }
+  { "id": "tunnelrush", "title": "Tunnel Rush", "path": "games/tunnelrush/" },
+  { "id": "hextris", "title": "Hextris", "path": "games/hextris/" },
+  { "id": "fbwg1", "title": "Fireboy and Watergirl 1", "path": "games/fbwg1/" },
+  { "id": "fbwg2", "title": "Fireboy and Watergirl 2", "path": "games/fbwg2/" },
+  { "id": "fbwg3", "title": "Fireboy and Watergirl 3", "path": "games/fbwg3/" },
+  { "id": "fbwg4", "title": "Fireboy and Watergirl 4", "path": "games/fbwg4/" }  
 ]
