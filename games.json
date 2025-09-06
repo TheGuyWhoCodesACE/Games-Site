@@ -17,5 +17,7 @@
   { "id": "bitlife", "title": "Bitlife", "path": "games/bitlife/" },
   { "id": "amongus", "title": "Among Us", "path": "games/amongus/" },
   { "id": "drivemad", "title": "Drive Mad", "path": "games/drivemad/" },
-  { "id": "driftboss", "title": "Drift Boss", "path": "games/driftboss/" }
+  { "id": "driftboss", "title": "Drift Boss", "path": "games/driftboss/" },
+  { "id": "superhot", "title": "Superhot", "path": "games/superhot/" },
+  { "id": "retrobowl", "title": "Retro Bowl", "path": "games/retrobowl/" }
 ]
