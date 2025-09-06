@@ -21,5 +21,9 @@
   { "id": "superhot", "title": "Superhot", "path": "games/superhot/" },
   { "id": "retrobowl", "title": "Retro Bowl", "path": "games/retrobowl/" },
   { "id": "templerun", "title": "Temple Run", "path": "games/templerun/" },
-  { "id": "idlebreakout", "title": "Idle Breakout", "path": "games/idlebreakout/" }
+  { "id": "idlebreakout", "title": "Idle Breakout", "path": "games/idlebreakout/" },
+  { "id": "slope", "title": "Slope", "path": "games/slope/" },
+  { "id": "magictiles", "title": "Magic Tiles", "path": "games/magictiles/" },
+  { "id": "skyball", "title": "Sky Ball", "path": "games/skyball/" },
+  { "id": "tunnelrush", "title": "Tunnel Rush", "path": "games/tunnelrush/" }
 ]
