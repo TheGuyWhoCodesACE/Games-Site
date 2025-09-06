@@ -19,5 +19,6 @@
   { "id": "drivemad", "title": "Drive Mad", "path": "games/drivemad/" },
   { "id": "driftboss", "title": "Drift Boss", "path": "games/driftboss/" },
   { "id": "superhot", "title": "Superhot", "path": "games/superhot/" },
-  { "id": "retrobowl", "title": "Retro Bowl", "path": "games/retrobowl/" }
+  { "id": "retrobowl", "title": "Retro Bowl", "path": "games/retrobowl/" },
+  { "id": "templerun", "title": "Temple Run", "path": "games/templerun/" }
 ]
