@@ -10,6 +10,7 @@
   { "id": "karatebros", "title": "Karate Bros", "path": "games/karatebros/" },
   { "id": "baseballbros", "title": "Baseball Bros", "path": "games/baseballbros/" },
   { "id": "pac-man", "title": "Pac-Man", "path": "games/pac-man/" },
+  { "id": "run3", "title": "Run 3", "path": "games/run3/" },
   { "id": "snake", "title": "Snake", "path": "games/snake/" },
   { "id": "cookieclicker", "title": "Cookie Clicker", "path": "games/cookieclicker/" }
 ]
