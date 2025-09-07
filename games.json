@@ -1,15 +1,16 @@
 
 [
   { "id": "2048", "title": "2048", "path": "games/2048/" },
-  { "id": "basketballbros", "title": "Basketball Bros", "path": "games/basketballbros/" },
   { "id": "crossyroad", "title": "Crossy Road", "path": "games/crossyroad/" },
   { "id": "flappybird", "title": "Flappy Bird", "path": "games/flappybird/" },
   { "id": "fruit_ninja", "title": "Fruit Ninja", "path": "games/fruit_ninja/" },
   { "id": "geometrydash", "title": "Geometry Dash", "path": "games/geometrydash/" },
+  { "id": "basketballbros", "title": "Basket Bros", "path": "games/basketballbros/" },
   { "id": "wrestlebros", "title": "Wrestle Bros", "path": "games/wrestlebros/" },
   { "id": "soccerbros", "title": "Soccer Bros", "path": "games/soccerbros/" },
   { "id": "karatebros", "title": "Karate Bros", "path": "games/karatebros/" },
   { "id": "baseballbros", "title": "Baseball Bros", "path": "games/baseballbros/" },
+  { "id": "kartbros", "title": "Kart Bros", "path": "games/kartbros/" },
   { "id": "pac-man", "title": "Pac-Man", "path": "games/pac-man/" },
   { "id": "run3", "title": "Run 3", "path": "games/run3/" },
   { "id": "snake", "title": "Snake", "path": "games/snake/" },
