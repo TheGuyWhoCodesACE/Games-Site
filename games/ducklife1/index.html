@@ -6,7 +6,7 @@
     <title>2048</title>
     <style>
         html, body {
-            m/argin: 0;
+            margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
@@ -31,21 +31,20 @@
 </head>
 <body>
 
-    <iframe src="https://games.wixgames.co.uk/games/ducklife1/webgl/"></iframe>
+    <iframe id="gameFrame" src="https://games.wixgames.co.uk/games/ducklife1/webgl/"></iframe>
 
-    <button 
-      onclick="fullscreenGame('https://games.wixgames.co.uk/games/ducklife1/webgl/')" 
-      class="fullscreen"></button>
+    <button onclick="fullscreenGame()" class="fullscreen">⛶</button>
 
     <script>
-        function fullscreenGame(href) {
-            const iframe = document.querySelector("iframe");
-            const stl = iframe.style;
-            stl.width = '100vw';
-            stl.height = '100vh';
-            stl.position = 'fixed';
-            stl.left = stl.right = stl.top = stl.bottom = '0';
-            iframe.src = href;
+        function fullscreenGame() {
+            const iframe = document.getElementById("gameFrame");
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { // Safari
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE11
+                iframe.msRequestFullscreen();
+            }
         }
     </script>
 
