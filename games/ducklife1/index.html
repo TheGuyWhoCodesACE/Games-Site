@@ -31,62 +31,10 @@
 </head>
 <body>
 
-    <iframe src="<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2048</title>
-    <style>
-        html, body {
-            m/argin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100vw;
-            height: 100vh;
-            border: none;
-        }
-        .fullscreen {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            background: rgba(0,0,0,0.5);
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-        }
-    </style>
-</head>
-<body>
-
     <iframe src="https://games.wixgames.co.uk/games/ducklife1/webgl/"></iframe>
 
     <button 
       onclick="fullscreenGame('https://games.wixgames.co.uk/games/ducklife1/webgl/')" 
-      class="fullscreen"></button>
-
-    <script>
-        function fullscreenGame(href) {
-            const iframe = document.querySelector("iframe");
-            const stl = iframe.style;
-            stl.width = '100vw';
-            stl.height = '100vh';
-            stl.position = 'fixed';
-            stl.left = stl.right = stl.top = stl.bottom = '0';
-            iframe.src = href;
-        }
-    </script>
-
-</body>
-</html>"></iframe>
-
-    <button 
-      onclick="fullscreenGame('https://dao-2048-chi.vercel.app')" 
       class="fullscreen"></button>
 
     <script>
