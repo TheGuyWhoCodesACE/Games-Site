@@ -34,5 +34,9 @@
   { "id": "fbwg3", "title": "Fireboy and Watergirl 3", "path": "games/fbwg3/" },
   { "id": "fbwg4", "title": "Fireboy and Watergirl 4", "path": "games/fbwg4/" },
   { "id": "subwaysurfers", "title": "Subway Surfers", "path": "games/subwaysurfers/" },
-  { "id": "cuttherope", "title": "Cut The Rope", "path": "games/cuttherope/" }
+  { "id": "cuttherope", "title": "Cut The Rope", "path": "games/cuttherope/" },
+  { "id": "motox3m", "title": "MotoX3M" "path": "games/motox3m/" },
+  { "id": "motox3mpool", "title": "MotoX3M Pool Party" "path": "games/motox3mpool/" },
+  { "id": "motox3mspooky", "title": "MotoX3M Spooky Land" "path": "games/motox3m/spooky" },
+  { "id": "motox3mwinter", "title": "MotoX3M Winter "path": "games/motox3m/motox3mwinter" }
 ]
