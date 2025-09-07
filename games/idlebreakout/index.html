@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idle Breakout<title>
+    <title>Idle Breakout</title>
     <style>
         html, body {
             margin: 0;
@@ -33,19 +33,17 @@
 
     <iframe src="https://universal-games-unblocked.vercel.app/projects/idle-breakout/index.html"></iframe>
 
-    <button 
-      onclick="fullscreenGame('https://universal-games-unblocked.vercel.app/projects/idle-breakout/index.html')" 
-      class="fullscreen"></button>
+    <button onclick="fullscreenGame()" class="fullscreen">⛶</button>
 
     <script>
-        function fullscreenGame(href) {
+        function fullscreenGame() {
             const iframe = document.querySelector("iframe");
             const stl = iframe.style;
             stl.width = '100vw';
             stl.height = '100vh';
             stl.position = 'fixed';
-            stl.left = stl.right = stl.top = stl.bottom = '0';
-            iframe.src = href;
+            stl.left = stl.top = '0';
+            stl.right = stl.bottom = '0';
         }
     </script>
 
