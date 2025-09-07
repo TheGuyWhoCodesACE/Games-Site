@@ -43,5 +43,8 @@
   { "id": "hardestgame", "title": "World's Hardest Game", "path": "games/hardestgame/" },
   { "id": "ducklife1", "title": "Duck Life 1", "path": "games/ducklife1/" },
   { "id": "ducklife2", "title": "Duck Life 2", "path": "games/ducklife2/" },
-  { "id": "ducklife3", "title": "Duck Life 3", "path": "games/ducklife3/" }
+  { "id": "ducklife3", "title": "Duck Life 3", "path": "games/ducklife3/" },
+  { "id": "minecraft", "title": "Minecraft", "path": "games/minecraft/" },
+  { "id": "slowroads", "title": "Slow Roads - Driving Sim", "path": "games/slowroads/" },
+  { "id": "doodlejump", "title": "Doodle Jump", "path": "games/doodlejump/" }
 ]
