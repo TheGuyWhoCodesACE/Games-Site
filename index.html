@@ -225,6 +225,13 @@ fetch("games.json")
 searchInput.addEventListener('input', e => {
   renderGames(e.target.value);
 });
+
+// Prevent arrow keys and space from scrolling
+window.addEventListener("keydown", function(e) {
+  if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(e.key)) {
+    e.preventDefault();
+  }
+}, { passive: false });
 </script>
 
 </body>
