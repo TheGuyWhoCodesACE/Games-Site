@@ -34,7 +34,6 @@
       color: #1a2d4b;
     }
 
-    /* Search bar */
     #search {
       display: block;
       width: 90%;
@@ -113,13 +112,7 @@
       border-radius:12px;
     }
 
-    iframe { 
-      width:100%; 
-      height:70vh; 
-      border:none; 
-      overflow:hidden; 
-      display:block;
-    }
+    iframe { width:100%; height:70vh; border:none; }
 
     #controls {
       display:flex;
@@ -159,8 +152,7 @@
     <button id="close">Close</button>
     <button id="fullscreen">Fullscreen</button>
   </div>
-  <!-- prevent iframe scrolling -->
-  <iframe id="frame" scrolling="no"></iframe>
+  <iframe id="frame"></iframe>
 </dialog>
 
 <script>
@@ -233,9 +225,18 @@ searchInput.addEventListener('input', e => {
   renderGames(e.target.value);
 });
 
-// Prevent arrow keys and space from scrolling only when dialog is open
+// --- Added fix: prevent main page scrolling when dialog is open ---
+player.addEventListener('show', () => {
+  document.body.style.overflow = 'hidden';
+});
+
+player.addEventListener('close', () => {
+  document.body.style.overflow = '';
+});
+
+// Prevent arrow keys from scrolling main page while dialog is open
 window.addEventListener("keydown", function(e) {
-  if (player.open && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(e.key)) {
+  if (player.open && ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"," "].includes(e.key)) {
     e.preventDefault();
   }
 }, { passive: false });
