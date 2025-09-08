@@ -34,6 +34,7 @@
       color: #1a2d4b;
     }
 
+    /* Search bar */
     #search {
       display: block;
       width: 90%;
@@ -225,21 +226,13 @@ searchInput.addEventListener('input', e => {
   renderGames(e.target.value);
 });
 
-// --- Added fix: prevent main page scrolling when dialog is open ---
-player.addEventListener('show', () => {
-  document.body.style.overflow = 'hidden';
-});
-
-player.addEventListener('close', () => {
-  document.body.style.overflow = '';
-});
-
-// Prevent arrow keys from scrolling main page while dialog is open
+// --- FIX: prevent arrow keys & space from scrolling page when iframe open ---
 window.addEventListener("keydown", function(e) {
   if (player.open && ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"," "].includes(e.key)) {
     e.preventDefault();
   }
 }, { passive: false });
+
 </script>
 
 </body>
