@@ -113,7 +113,13 @@
       border-radius:12px;
     }
 
-    iframe { width:100%; height:70vh; border:none; }
+    iframe { 
+      width:100%; 
+      height:70vh; 
+      border:none; 
+      overflow:hidden; 
+      display:block;
+    }
 
     #controls {
       display:flex;
@@ -153,7 +159,8 @@
     <button id="close">Close</button>
     <button id="fullscreen">Fullscreen</button>
   </div>
-  <iframe id="frame"></iframe>
+  <!-- prevent iframe scrolling -->
+  <iframe id="frame" scrolling="no"></iframe>
 </dialog>
 
 <script>
