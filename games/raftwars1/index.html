@@ -1,53 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2048</title>
-    <style>
-        html, body {
-            m/argin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100vw;
-            height: 100vh;
-            border: none;
-        }
-        .fullscreen {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            background: rgba(0,0,0,0.5);
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Raft Wars</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #99ddff, #66ccff);
+      font-family: system-ui, sans-serif;
+    }
+    .box {
+      text-align: center;
+      background: #e0f7ff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      background: #66ccff;
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    a:hover { background: #33b3ff; }
+  </style>
 </head>
 <body>
+  <div class="box">
+    <h1>Raft Wars</h1>
+    <p>This game must open in a new tab.</p>
+    <a href="https://5dd23a0d-015f-11ea-ad56-9cb6d0d995f7.poki-gdn.com/5aa5c06c-7000-4a52-99b5-c16cf310fe50/index.html" target="_blank">Play Now</a>
+  </div>
 
-    <iframe src="https://5dd23a0d-015f-11ea-ad56-9cb6d0d995f7.poki-gdn.com/5aa5c06c-7000-4a52-99b5-c16cf310fe50/index.html"></iframe>
-
-    <button 
-      onclick="fullscreenGame('https://5dd23a0d-015f-11ea-ad56-9cb6d0d995f7.poki-gdn.com/5aa5c06c-7000-4a52-99b5-c16cf310fe50/index.html')" 
-      class="fullscreen"></button>
-
-    <script>
-        function fullscreenGame(href) {
-            const iframe = document.querySelector("iframe");
-            const stl = iframe.style;
-            stl.width = '100vw';
-            stl.height = '100vh';
-            stl.position = 'fixed';
-            stl.left = stl.right = stl.top = stl.bottom = '0';
-            iframe.src = href;
-        }
-    </script>
-
+  <script>
+    // Auto-redirect after a short delay
+    setTimeout(() => {
+      window.open("https://5dd23a0d-015f-11ea-ad56-9cb6d0d995f7.poki-gdn.com/5aa5c06c-7000-4a52-99b5-c16cf310fe50/index.html", "_blank");
+    }, 1000);
+  </script>
 </body>
 </html>
