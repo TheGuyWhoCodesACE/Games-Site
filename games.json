@@ -52,5 +52,5 @@
   { "id": "unshuffle", "title": "Unshuffle", "path": "games/unshuffle/" },
   { "id": "clashroyale", "title": "Clash Royale Clone", "path": "games/clashroyale/" },
   { "id": "minesweepr", "title": "Minesweeper", "path": "games/minesweepr/" },
-  { "id": "brawlstars", "title": "Brawl Stars", "path": "games/brawlstars/" }
+  { "id": "brawlstars", "title": "Brawl Stars Clone", "path": "games/brawlstars/" }
 ]
