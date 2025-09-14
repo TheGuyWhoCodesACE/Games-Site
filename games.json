@@ -51,5 +51,6 @@
   { "id": "polytrack", "title": "Poly Track", "path": "games/polytrack/" },
   { "id": "unshuffle", "title": "Unshuffle", "path": "games/unshuffle/" },
   { "id": "clashroyale", "title": "Clash Royale Clone", "path": "games/clashroyale/" },
-  { "id": "minesweepr", "title": "Minesweeper", "path": "games/minesweepr/" }
+  { "id": "minesweepr", "title": "Minesweeper", "path": "games/minesweepr/" },
+  { "id": "brawlstars", "title": "Brawl Stars", "path": "games/brawlstars/" }
 ]
