@@ -50,6 +50,5 @@
   { "id": "escaperoad", "title": "Escape Road", "path": "games/escaperoad/" },
   { "id": "polytrack", "title": "Poly Track", "path": "games/polytrack/" },
   { "id": "unshuffle", "title": "Unshuffle", "path": "games/unshuffle/" },
-  { "id": "clashroyale", "title": "Clash Royale Clone", "path": "games/clashroyale/" },
-  { "id": "raftwars1", "title": "Raft Wars", "path": "games/raftwars1/" }
+  { "id": "clashroyale", "title": "Clash Royale Clone", "path": "games/clashroyale/" }
 ]
