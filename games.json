@@ -48,9 +48,5 @@
   { "id": "slowroads", "title": "Slow Roads - Driving Sim", "path": "games/slowroads/" },
   { "id": "doodlejump", "title": "Doodle Jump", "path": "games/doodlejump/" },
   { "id": "escaperoad", "title": "Escape Road", "path": "games/escaperoad/" },
-  { "id": "polytrack", "title": "Poly Track", "path": "games/polytrack/" },
-  { "id": "unshuffle", "title": "Unshuffle", "path": "games/unshuffle/" },
-  { "id": "clashroyale", "title": "Clash Royale Clone", "path": "games/clashroyale/" },
-  { "id": "minesweepr", "title": "Minesweeper", "path": "games/minesweepr/" },
-  { "id": "brawlstars", "title": "Brawl Stars Clone", "path": "games/brawlstars/" }
+  { "id": "polytrack", "title": "Poly Track", "path": "games/polytrack/" }
 ]
