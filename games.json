@@ -51,5 +51,7 @@
   { "id": "slowroads", "title": "Slow Roads - Driving Sim", "path": "games/slowroads/" },
   { "id": "doodlejump", "title": "Doodle Jump", "path": "games/doodlejump/" },
   { "id": "escaperoad", "title": "Escape Road", "path": "games/escaperoad/" },
+  { "id": "learntofly1", "title": "Learn To Fly 1", "path": "games/learntofly1/" },
+  { "id": "learntofly2", "title": "Learn To Fly 2", "path": "games/learntofly2/" },
   { "id": "polytrack", "title": "Poly Track", "path": "games/polytrack/" }
 ]
