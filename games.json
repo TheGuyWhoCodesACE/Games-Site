@@ -39,6 +39,8 @@
   { "id": "motox3mspooky", "title": "MotoX3M Spooky Land", "path": "games/motox3mspooky/" },
   { "id": "motox3mwinter", "title": "MotoX3M Winter", "path": "games/motox3mwinter/" },
   { "id": "papaspizza", "title": "Papa's Pizzeria", "path": "games/papaspizza/" },
+  { "id": "papasburger", "title": "Papa's Burgeria", "path": "games/papasburger/" },
+  { "id": "papasshake", "title": "Papa's Freezeria", "path": "games/papasshake/" },
   { "id": "thereisnogame", "title": "There Is No Game", "path": "games/thereisnogame/" },
   { "id": "hardestgame", "title": "World's Hardest Game", "path": "games/hardestgame/" },
   { "id": "ducklife1", "title": "Duck Life 1", "path": "games/ducklife1/" },
